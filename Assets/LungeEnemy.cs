@@ -1,74 +1,72 @@
-using UnityEditor.SearchService;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class LungeEnemy : MonoBehaviour
 {
-    [SerializeField] Rigidbody2D rb;
-    [SerializeField] float distanceToAttack;
-    private GameObject closestBubble;
-    private Vector2 directionToBubble;
-    [SerializeField] float speed;
-    private float chargedTimer;
-    private float lungedTimer;
-    [SerializeField] float chargedTime;
-    [SerializeField] float lungedTime;
-    Vector3 enemyMovement;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private float distanceToAttack = 5f;
+    [SerializeField] private float speed = 5f;
+    [SerializeField] private float chargedTime = 2f; // Time spent "charging" before lunging
+    [SerializeField] private float lungedTime = 1f;  // Time spent in "lunged" state
 
-    // Update is called once per frame
+    private GameObject closestBubble = null;
+    private Vector2 directionToBubble;
+    private float chargedTimer = 0f;
+    private float lungedTimer = 0f;
+
     void Update()
     {
+        // Handle timers
         if (lungedTimer > 0f)
-        
-        chargedTimer -= Time.deltaTime;
-        Debug.Log("Charge" + chargedTimer);
-        lungedTimer -= Time.deltaTime;
-        Debug.Log("Lunge" + lungedTimer);
+        {
+            lungedTimer -= Time.deltaTime;
+            if (lungedTimer <= 0f)
+            {
+                // After lunging, reset to charging state
+                chargedTimer = chargedTime;
+                closestBubble = null; // Reset target
+            }
+        }
+        else if (chargedTimer > 0f)
+        {
+            chargedTimer -= Time.deltaTime;
+        }
+
+        // Find the closest bubble within range
+        if (lungedTimer <= 0f && chargedTimer <= 0f)
+        {
+            closestBubble = FindClosestBubble();
+            if (closestBubble != null)
+            {
+                // Prepare to lunge towards the bubble
+                lungedTimer = lungedTime;
+                directionToBubble = closestBubble.transform.position - transform.position;
+
+                // Lunge toward the bubble using Rigidbody2D physics
+                rb.velocity = directionToBubble.normalized * speed;
+            }
+        }
+        else if (lungedTimer <= 0f)
+        {
+            // Stop moving after lunging
+            rb.velocity = Vector2.zero;
+        }
+    }
+
+    private GameObject FindClosestBubble()
+    {
+        GameObject closest = null;
+        float minDistance = Mathf.Infinity;
 
         foreach (GameObject bubble in BubbleManager.playerBubbleList)
         {
             float distance = Vector2.Distance(transform.position, bubble.transform.position);
-            Debug.Log("was");
-            if (distance < distanceToAttack && !closestBubble)
+            if (distance < distanceToAttack && distance < minDistance)
             {
-                closestBubble = bubble;
-                Debug.Log("will");
-                
+                closest = bubble;
+                minDistance = distance;
             }
         }
-        Debug.Log("Good");
-        if (closestBubble != null && chargedTimer <= 0f)
-        {
-            lungedTimer = lungedTime;
-            directionToBubble = closestBubble.transform.position - transform.position;
-            //rb.AddForce(directionToBubble.normalized * Time.deltaTime * speed, ForceMode2D.Impulse);
-            //rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, speed);
-            Vector2 movement = directionToBubble.normalized * Time.deltaTime * speed;
-            transform.position += new Vector3 (movement.x, movement.y, 0f);
-            
-            Debug.Log("is");
-        }
-        Debug.Log("Gooder");
-        if (lungedTimer <= 0f && closestBubble != null)
-        {
-            closestBubble = null;
-            chargedTimer = chargedTime;
-        }
+
+        return closest;
     }
-
-
-    /*void OnCollisionEnter2D(Collision2D collision){
-        if(collision.collider.gameObject.layer == LayerMask.NameToLayer("Hazard")){
-            BubbleManager.RemoveBubble(this.gameObject);
-            Destroy(this.gameObject);
-        }
-    }*/
-
-    
-    
 }
