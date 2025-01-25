@@ -7,7 +7,7 @@ public class CloudMovement : MonoBehaviour
     public float lifeTime = 20f; // Time clouds stay visible before fading out
     public Vector3 startPosition; // Starting position for the clouds
     public Vector3 endPosition; // End position for the clouds
-
+    
     private Renderer cloudRenderer;
     private float fadeTimer;
     private bool isFadingIn;
@@ -73,7 +73,7 @@ public class CloudMovement : MonoBehaviour
         isFadingOut = false;
         SetCloudOpacity(0); // Start fully transparent
     }
-
+    
     void StartFadeOut()
     {
         isFadingOut = true;
