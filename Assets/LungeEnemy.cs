@@ -7,6 +7,7 @@ public class LungeEnemy : MonoBehaviour
     [SerializeField] private float speed = 5f;
     [SerializeField] private float chargedTime = 2f; // Time spent "charging" before lunging
     [SerializeField] private float lungedTime = 1f;  // Time spent in "lunged" state
+    [SerializeField] Sprite []sprites;
 
     private GameObject closestBubble = null;
     private Vector2 directionToBubble;
@@ -42,13 +43,13 @@ public class LungeEnemy : MonoBehaviour
                 directionToBubble = closestBubble.transform.position - transform.position;
 
                 // Lunge toward the bubble using Rigidbody2D physics
-                rb.velocity = directionToBubble.normalized * speed;
+                rb.linearVelocity = directionToBubble.normalized * speed;
             }
         }
         else if (lungedTimer <= 0f)
         {
             // Stop moving after lunging
-            rb.velocity = Vector2.zero;
+            rb.linearVelocity = Vector2.zero;
         }
     }
 
