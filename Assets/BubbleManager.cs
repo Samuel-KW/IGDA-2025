@@ -13,22 +13,27 @@
             if(allBubbleList == null){
                 allBubbleList = new List<GameObject>();
             }
+
+
             playerBubbleList.Add(bubbleRef);
-            if(allBubbleList.FindIndex(bubbleRef => bubbleRef.gameObject == bubbleRef) != -1){
+            if(allBubbleList.FindIndex(bubbleRef => bubbleRef.gameObject == bubbleRef) == -1){
                 allBubbleList.Add(bubbleRef);
             }
 
+            Debug.Log(playerBubbleList.Count);
         }
 
         public static void RemoveBubble(GameObject bubbleRef){
+            Debug.Log(playerBubbleList.FindIndex(b => b == bubbleRef));
             playerBubbleList.RemoveAt(playerBubbleList.FindIndex(b => b == bubbleRef));
+            Debug.Log(playerBubbleList.Count);
         }
 
         public static void AssignBubble(BubbleTaskable task, GameObject bubbleRef){
             if(bubbleTaskList == null){
                 bubbleTaskList = new List<BubbleTaskable>();
             }
-            playerBubbleList.RemoveAt(playerBubbleList.FindIndex(b => b == bubbleRef));
+            RemoveBubble(bubbleRef);
             if(bubbleTaskList.FindIndex(b => b == task) != -1){
                 bubbleTaskList.Add(task);
                 task.AttachBubbleToTask(bubbleRef);

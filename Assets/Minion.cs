@@ -4,9 +4,11 @@ public class Minion : MonoBehaviour
 {
     [SerializeField] Rigidbody2D rb;
     public BubbleTaskable task;
+    private Transform player;
     // Update is called once per frame
     void Start(){
         BubbleManager.AddBubble(gameObject);
+        player = GameObject.Find("Player").transform;
     }
 
     void Update()
@@ -18,7 +20,8 @@ public class Minion : MonoBehaviour
             MoveTo(task.transform.position);
         }
         else{
-            MoveTo(mouseWorldPos);
+            //MoveTo(mouseWorldPos);
+            MoveTo(player.position);
         }
         
     }

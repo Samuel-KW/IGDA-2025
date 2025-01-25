@@ -19,8 +19,8 @@ public class Cookie : BubbleTaskable
         
         if(neededBubbles > bubbles.Count && Vector3.Distance(BubbleManager.GetMousePos(), transform.position) < 2f && Input.GetMouseButtonDown(0)){
             Debug.Log("Has Bubbles");
-            if(BubbleManager.allBubbleList.Count > 0){
-                BubbleManager.AssignBubble(this, BubbleManager.allBubbleList[0]);
+            if(BubbleManager.playerBubbleList.Count > 0){
+                BubbleManager.AssignBubble(this, BubbleManager.playerBubbleList[0]);
             }
         }
         if(neededBubbles <= bubbles.Count){
@@ -34,6 +34,7 @@ public class Cookie : BubbleTaskable
         Vector3 movement = moveDirection.normalized * Time.deltaTime * speed;
         transform.position += movement;
         if(Vector3.Distance(transform.position, spawner.transform.position) < 1f){
+            DetachBubblesFromTask();
             spawner.Spawn(rewardBubbles);
             Destroy(gameObject);
         }

@@ -21,11 +21,12 @@ public class BubbleTaskable : MonoBehaviour
         bubbles.Add(bubble);
         Minion minion = bubble.GetComponent<Minion>();
         minion.task = this;
+        Debug.Log("Attached Bubble");
     }
 
     public void DetachBubblesFromTask(){
-        BubbleManager.playerBubbleList.AddRange(bubbles);
         foreach(GameObject bubble in bubbles){
+            BubbleManager.AddBubble(bubble);
             Minion minion = bubble.GetComponent<Minion>();
             minion.task = null;
         }
