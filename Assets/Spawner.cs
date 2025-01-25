@@ -20,13 +20,19 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 mousePos = BubbleManager.GetMousePos();
+        /*Vector3 mousePos = BubbleManager.GetMousePos();
 
         if(Vector3.Distance(mousePos, transform.position) < 2f && spawnTimes > 0f && !running){
             spawnTimes -= 1;
             StartCoroutine("SpawnRoutine");
             running = true;
-        }
+        }*/
+    }
+
+    public void Spawn(int rewardBubbles){
+        spawnCount = rewardBubbles;
+        StartCoroutine("SpawnRoutine");
+        running = true;
     }
 
     IEnumerator SpawnRoutine(){

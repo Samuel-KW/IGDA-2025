@@ -3,9 +3,10 @@ using UnityEngine;
 public class Minion : MonoBehaviour
 {
     [SerializeField] Rigidbody2D rb;
+    public BubbleTaskable task;
     // Update is called once per frame
     void Start(){
-        BubbleManager.AddBubble(this.gameObject);
+        BubbleManager.AddBubble(gameObject);
     }
 
     void Update()
@@ -13,18 +14,29 @@ public class Minion : MonoBehaviour
         Vector3 mouseWorldPos = BubbleManager.GetMousePos();
         //Debug.Log(mouseWorldPos);
 
-        var directionToMouse = transform.position - mouseWorldPos;
+        if(task != null){
+            MoveTo(task.transform.position);
+        }
+        else{
+            MoveTo(mouseWorldPos);
+        }
+        
+    }
 
-        if(Vector3.Distance(transform.position, mouseWorldPos) < 1f){
-            rb.AddForce(-directionToMouse.normalized * Time.deltaTime * 10f, ForceMode2D.Impulse);
-            rb.linearVelocity = Vector3.ClampMagnitude(-rb.linearVelocity, (Vector3.Distance(transform.position, mouseWorldPos) / 2f));
+    void MoveTo(Vector3 pos){
+
+        var directionToPos = transform.position - pos;
+
+        if(Vector3.Distance(transform.position, pos) < 1f){
+            rb.AddForce(-directionToPos.normalized * Time.deltaTime * 10f, ForceMode2D.Impulse);
+            rb.linearVelocity = Vector3.ClampMagnitude(-rb.linearVelocity, (Vector3.Distance(transform.position, pos) / 2f));
             if(rb.linearVelocity.magnitude < 0.5f){
                 transform.position = transform.position;
             }
         }
         else{
-            rb.AddForce(-directionToMouse.normalized * Time.deltaTime * 10f, ForceMode2D.Impulse);
-            rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, Vector3.Distance(transform.position, mouseWorldPos));
+            rb.AddForce(-directionToPos.normalized * Time.deltaTime * 10f, ForceMode2D.Impulse);
+            rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, Vector3.Distance(transform.position, pos));
         }
     }
 
@@ -34,4 +46,5 @@ public class Minion : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
 }

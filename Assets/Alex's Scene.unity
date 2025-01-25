@@ -151,6 +151,17 @@ Transform:
   - {fileID: 6922662286270330429}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &270935526 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2327239112487721885, guid: 022838e7599ee80408002bd74ba5dca4, type: 3}
+  m_PrefabInstance: {fileID: 390439560894610422}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbc3baaab3d95254cb7a07af063c500c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &347116387
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,6 +307,7 @@ GameObject:
   - component: {fileID: 558971694}
   - component: {fileID: 558971693}
   - component: {fileID: 558971692}
+  - component: {fileID: 558971695}
   m_Layer: 0
   m_Name: Cookie
   m_TagString: Untagged
@@ -317,6 +329,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   neededBubbles: 3
   bubbles: []
+  rewardBubbles: 5
+  spawner: {fileID: 270935526}
+  speed: 1
 --- !u!212 &558971693
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -387,6 +402,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &558971695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558971691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7a74a4aba2e45d4dab13004b666c7c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  neededBubbles: 3
+  bubbles: []
 --- !u!1 &631789799
 GameObject:
   m_ObjectHideFlags: 0
