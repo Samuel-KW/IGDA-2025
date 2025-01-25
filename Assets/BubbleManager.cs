@@ -4,10 +4,12 @@ using System.Collections.Generic;
 public static class BubbleManager
 {
     public static HashSet<GameObject> playerBubbleList;
+    public static List<List<GameObject>> bubbleTaskList;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public static void Start()
     {
         playerBubbleList = new HashSet<GameObject>();
+        bubbleTaskList = new List<List<GameObject>>();
     }
 
     public static void AddBubble(GameObject bubbleRef){
