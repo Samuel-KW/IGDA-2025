@@ -1,21 +1,27 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class BubbleTaskable
+public class ObjectBubbleTaskable : MonoBehaviour
 {
-    public Vector3 movePosition;
-    public List<GameObject> bubbles = new List<GameObject>();
-    public BubbleTaskable(Vector3 pos)
+    [SerializeField] public int neededBubbles;
+    public List<GameObject> bubbles;
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
     {
-        movePosition = pos;
+        bubbles = new List<GameObject>();
     }
 
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
 
     public void AttachBubbleToTask(GameObject bubble){
-        //Debug.Log("Attached Bubble");
         bubbles.Add(bubble);
         Minion minion = bubble.GetComponent<Minion>();
         minion.task = this;
+        //Debug.Log("Attached Bubble");
     }
 
     public void DetachBubblesFromTask(){

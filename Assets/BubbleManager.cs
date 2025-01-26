@@ -1,11 +1,14 @@
     using UnityEngine;
     using System.Collections.Generic;
+    using System.Collections;
+    using Microsoft.CSharp;
+    using System.Dynamic;
 
     public static class BubbleManager
     {
         public static List<GameObject> allBubbleList;
         public static List<GameObject> playerBubbleList;
-        public static List<BubbleTaskable> bubbleTaskList;
+        public static ArrayList bubbleTaskList;
         public static void AddBubble(GameObject bubbleRef){
             if(playerBubbleList == null){
                 playerBubbleList = new List<GameObject>();
@@ -14,38 +17,61 @@
                 allBubbleList = new List<GameObject>();
             }
 
-
             playerBubbleList.Add(bubbleRef);
-            if(allBubbleList.FindIndex(bubbleRef => bubbleRef.gameObject == bubbleRef) == -1){
+            if (!allBubbleList.Contains(bubbleRef))
+            {
                 allBubbleList.Add(bubbleRef);
             }
 
-            Debug.Log(playerBubbleList.Count);
+            //Debug.Log(playerBubbleList.Count);
+        }
+
+        public static void RecallAllBubbles(){
+            //Debug.Log(allBubbleList.Count);
+            foreach(GameObject bubble in allBubbleList){
+                //Debug.Log("Reached Here");
+                Minion minion = bubble.GetComponent<Minion>();
+                if(minion.task != null){
+                    //Debug.Log("Found Bubble In Task");
+                    minion.task.DetachBubblesFromTask();
+                }
+            }
         }
 
         public static void RemoveBubble(GameObject bubbleRef){
-            Debug.Log(playerBubbleList.FindIndex(b => b == bubbleRef));
-            playerBubbleList.RemoveAt(playerBubbleList.FindIndex(b => b == bubbleRef));
-            Debug.Log(playerBubbleList.Count);
+            //Debug.Log(bubbleRef);
+            int index = playerBubbleList.FindIndex(b => b == bubbleRef);
+            //Debug.Log(index);
+            if(index != -1)
+            playerBubbleList.RemoveAt(index);
         }
 
-        public static void AssignBubble(BubbleTaskable task, GameObject bubbleRef){
-            if(bubbleTaskList == null){
-                bubbleTaskList = new List<BubbleTaskable>();
+        public static void AssignBubble(dynamic task, GameObject bubbleRef){ 
+            if(bubbleTaskList == null){ 
+                bubbleTaskList = new ArrayList(); 
             }
-            RemoveBubble(bubbleRef);
-            if(bubbleTaskList.FindIndex(b => b == task) != -1){
-                bubbleTaskList.Add(task);
-                task.AttachBubbleToTask(bubbleRef);
+            RemoveBubble(bubbleRef); 
+            if(FindTaskIndex(bubbleTaskList, task) == -1){ 
+                bubbleTaskList.Add(task); 
             }
-            else{
-                task.AttachBubbleToTask(bubbleRef);
-            }
+            task.AttachBubbleToTask(bubbleRef); 
+            //Debug.Log(playerBubbleList.Count); 
         }
 
         public static Vector3 GetMousePos(){
             var mouseWorldPos = Input.mousePosition;
             mouseWorldPos.z = 10.0f;
             return Camera.main.ScreenToWorldPoint(mouseWorldPos);
+        }
+
+        public static int FindTaskIndex(ArrayList bubbleTaskList, dynamic task){
+            for (int i = 0; i < bubbleTaskList.Count; i++)
+            {
+                if (bubbleTaskList[i] == task)
+                {
+                    return i;
+                }
+            }
+            return -1;
         }
     }

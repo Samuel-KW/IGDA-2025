@@ -1,13 +1,16 @@
+using Microsoft.CSharp;
 using UnityEngine;
+using System.Dynamic;
 
 public class Minion : MonoBehaviour
 {
     [SerializeField] Rigidbody2D rb;
-    public BubbleTaskable task;
+    public dynamic task;
     private Transform player;
     // Update is called once per frame
     void Start(){
         BubbleManager.AddBubble(gameObject);
+        Debug.Log("Added");
         player = GameObject.Find("Player").transform;
     }
 
@@ -16,8 +19,19 @@ public class Minion : MonoBehaviour
         Vector3 mouseWorldPos = BubbleManager.GetMousePos();
         //Debug.Log(mouseWorldPos);
 
-        if(task != null){
+        //Debug.Log(typeof(ObjectBubbleTaskable));
+        /*if(task != null){
+            Debug.Log("Physical task: " + typeof(ObjectBubbleTaskable).IsAssignableFrom(task.GetType()));
+            Debug.Log("Meta task: " + typeof(BubbleTaskable).IsAssignableFrom(task.GetType()));
+        }*/
+
+        if(task != null && typeof(ObjectBubbleTaskable).IsAssignableFrom(task.GetType())){
+            //Debug.Log("Object Bubble Task");
             MoveTo(task.transform.position);
+        }
+        else if(task != null && typeof(BubbleTaskable).IsAssignableFrom(task.GetType())){
+            //Debug.Log("Meta Bubble Task");
+            MoveTo(task.movePosition);
         }
         else{
             //MoveTo(mouseWorldPos);

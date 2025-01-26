@@ -1,12 +1,13 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class Cookie : BubbleTaskable
+public class SoapBottle : ObjectBubbleTaskable
 {
     [SerializeField] int rewardBubbles;
     [SerializeField] Spawner spawner;
 
     [SerializeField] float speed;
+    private bool proximity = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -16,17 +17,24 @@ public class Cookie : BubbleTaskable
     // Update is called once per frame
     void Update()
     {
-        
-        if(neededBubbles > bubbles.Count && Vector3.Distance(BubbleManager.GetMousePos(), transform.position) < 2f && Input.GetMouseButtonDown(0)){
-            Debug.Log("Has Bubbles");
-            if(BubbleManager.playerBubbleList.Count > 0){
-                BubbleManager.AssignBubble(this, BubbleManager.playerBubbleList[0]);
+        foreach(GameObject bubble in bubbles){
+            if(!(Vector3.Distance(bubble.transform.position, transform.position) < 3f)){
+                proximity = false;
+                return;
             }
+            proximity = true;
         }
         if(neededBubbles <= bubbles.Count){
             PushObjectToNearestSpawner();
         }
+    }
 
+    public void AssignNewBubbleToSoapBottle(){
+        if(BubbleManager.playerBubbleList.Count > 0){
+            Debug.Log("Made it");
+            GameObject bubbleToAssign = BubbleManager.playerBubbleList[0];
+            BubbleManager.AssignBubble(this, bubbleToAssign);
+        }
     }
 
     void PushObjectToNearestSpawner(){
