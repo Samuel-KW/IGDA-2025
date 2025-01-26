@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -50,25 +51,23 @@ public class AudioManager : MonoBehaviour
         //SetPitch(1.0f);
         MuteAll();
         PlayAll();
-        StartCoroutine(mus());
+        //SetMusicPowerNum(101.0f);
+        //StartCoroutine(mus());
     }
 
-    void SetMusicPowerNum(float val){ // SO SCUFFED
-        int power = (int)(
-            val >= 3 ? 1 : 0 +
-            val >= 5 ? 1 : 0 +
-            val >= 7 ? 1 : 0 +
-            val >= 13 ? 1 : 0 +
-            val >= 20 ? 1 : 0 +
-            val >= 30 ? 1 : 0 +
-            val >= 45 ? 1 : 0 +
-            val >= 57 ? 1 : 0 +
-            val >= 80 ? 1 : 0 +
-            val >= 100 ? 1 : 0
-        );
+    public void SetMusicPowerNum(float val)
+    { // SO SCUFFED
+        int power = 0;
+        int[] thresholds = { 3, 5, 7, 13, 20, 30, 45, 57, 80, 100 };
+        for (int i = 0; i < thresholds.Length; i++)
+        {
+            if (val >= thresholds[i]) power += 1;
+        }
+
+        UnityEngine.Debug.Log(power.ToString());
         if (power != prev_power)
         {
-            MuteAll();
+            //MuteAll();
             switch (power)
             {
                 case 0:
@@ -219,48 +218,48 @@ public class AudioManager : MonoBehaviour
             }
         }
         prev_power = power;
-        
+
     }
 
-    IEnumerator mus()
-    {
-        Fade("TinTapper", true);
-        Fade("SmolSnare", true);
-        Fade("BubbleBell", true);
-        yield return new WaitForSeconds(5);
-        //TimerObject.Play();
-        Queue("WompWomp", true);
-        Queue("ChipperChirp", true);
-        Queue("PontificatingPiccolo", true);
-        Queue("SizableSnare", true);
-        Queue("TimelyTriangle", true);
-        Queue("PrettyPluck", true);
-        Queue("TuhTimpani", true);
-        Queue("VictoryVells", true);
-        Queue("PontificatingPiccolo", true);
-        yield return new WaitForSeconds(16);
+    //IEnumerator mus()
+    //{
+    //    Fade("TinTapper", true);
+    //    Fade("SmolSnare", true);
+    //    Fade("BubbleBell", true);
+    //    yield return new WaitForSeconds(5);
+    //    //TimerObject.Play();
+    //    Queue("WompWomp", true);
+    //    Queue("ChipperChirp", true);
+    //    Queue("PontificatingPiccolo", true);
+    //    Queue("SizableSnare", true);
+    //    Queue("TimelyTriangle", true);
+    //    Queue("PrettyPluck", true);
+    //    Queue("TuhTimpani", true);
+    //    Queue("VictoryVells", true);
+    //    Queue("PontificatingPiccolo", true);
+    //    yield return new WaitForSeconds(16);
 
 
-        Queue("WompWomp", true);
-        yield return new WaitForSeconds(16);
-        Queue("ChipperChirp", true);
-        yield return new WaitForSeconds(16);
-        Queue("PontificatingPiccolo", true);
-        yield return new WaitForSeconds(16);
-        Queue("SizableSnare", true);
-        yield return new WaitForSeconds(16);
-        Queue("TimelyTriangle", true);
-        yield return new WaitForSeconds(16);
-        Queue("PrettyPluck", true);
-        yield return new WaitForSeconds(16);
-        Queue("TuhTimpani", true);
-        Queue("PontificatingPiccolo", false);
-        yield return new WaitForSeconds(16);
-        Queue("VictoryVells", true);
-        Queue("PontificatingPiccolo", true);
-        yield return new WaitForSeconds(16);
-        //Fade("MainSynth", true);
-    }
+    //    Queue("WompWomp", true);
+    //    yield return new WaitForSeconds(16);
+    //    Queue("ChipperChirp", true);
+    //    yield return new WaitForSeconds(16);
+    //    Queue("PontificatingPiccolo", true);
+    //    yield return new WaitForSeconds(16);
+    //    Queue("SizableSnare", true);
+    //    yield return new WaitForSeconds(16);
+    //    Queue("TimelyTriangle", true);
+    //    yield return new WaitForSeconds(16);
+    //    Queue("PrettyPluck", true);
+    //    yield return new WaitForSeconds(16);
+    //    Queue("TuhTimpani", true);
+    //    Queue("PontificatingPiccolo", false);
+    //    yield return new WaitForSeconds(16);
+    //    Queue("VictoryVells", true);
+    //    Queue("PontificatingPiccolo", true);
+    //    yield return new WaitForSeconds(16);
+    //    //Fade("MainSynth", true);
+    //}
 
     // Update is called once per frame
     void Update()
@@ -272,9 +271,9 @@ public class AudioManager : MonoBehaviour
             {
                 //if (!q.isPlaying)
                 //{
-                //    q.Play();
+                //    q.Play(); 
                 //}
-                q.volume = 1.0f;
+                q.volume = q.reverbZoneMix;
                 queue_add.Remove(q);
             }
             foreach (AudioSource q in queue_remove)
@@ -289,14 +288,14 @@ public class AudioManager : MonoBehaviour
         {
             foreach (AudioSource fade in fade_in.ToArray())
             {
-                if (fade.volume < 1.0f)
+                if (fade.volume < fade.reverbZoneMix)
                 {
                     //fade.volume += Time.deltaTime * FADE_SPEED;
-                    fade.volume = 1.0f;
+                    fade.volume = fade.reverbZoneMix;
                 }
                 else
                 {
-                    fade.volume = 1.0f;
+                    fade.volume = fade.reverbZoneMix;
                     fade_in.Remove(fade);
                 }
             }
