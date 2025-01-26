@@ -51,7 +51,7 @@
                     minion.task.DetachBubblesFromTask();
                 }
             }
-        }
+        }// 
 
         public static void RemoveBubble(GameObject bubbleRef){
             Debug.Log("Removed Bubble");
