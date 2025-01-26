@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4923711260722441985}
   - component: {fileID: 3815903551298580595}
   m_Layer: 0
-  m_Name: Parallax.02
+  m_Name: Parallax.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 809226308542235236}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 3}
+  m_LocalPosition: {x: 0, y: 0, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -100,7 +100,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aab07d66d8b641b4080aa26b876ab538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetObject: {fileID: 809226308542235236}
   speed: 0.01
 --- !u!1 &1743826364984356726
 GameObject:
@@ -114,7 +113,7 @@ GameObject:
   - component: {fileID: 9209875861637458975}
   - component: {fileID: 6597160625012701170}
   m_Layer: 0
-  m_Name: Parallax.03
+  m_Name: Parallax.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -129,7 +128,7 @@ Transform:
   m_GameObject: {fileID: 1743826364984356726}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 4}
+  m_LocalPosition: {x: 0, y: 0, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -202,7 +201,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aab07d66d8b641b4080aa26b876ab538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetObject: {fileID: 1743826364984356726}
   speed: 0.01
 --- !u!1 &4212568121475948126
 GameObject:
@@ -216,7 +214,7 @@ GameObject:
   - component: {fileID: 1227060966261427874}
   - component: {fileID: 3506087103040810368}
   m_Layer: 0
-  m_Name: Parallax.00
+  m_Name: Parallax.000
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -304,7 +302,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aab07d66d8b641b4080aa26b876ab538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetObject: {fileID: 4212568121475948126}
   speed: 0.01
 --- !u!1 &4779912453987604603
 GameObject:
@@ -318,7 +315,7 @@ GameObject:
   - component: {fileID: 2989961361304426768}
   - component: {fileID: 8219519914924182909}
   m_Layer: 0
-  m_Name: Parallax.01
+  m_Name: Parallax.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -333,7 +330,7 @@ Transform:
   m_GameObject: {fileID: 4779912453987604603}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 2}
+  m_LocalPosition: {x: 0, y: 0, z: 6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -406,7 +403,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aab07d66d8b641b4080aa26b876ab538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetObject: {fileID: 4779912453987604603}
   speed: 0.01
 --- !u!1 &5536310922418385999
 GameObject:
@@ -420,7 +416,7 @@ GameObject:
   - component: {fileID: 9041713940805677952}
   - component: {fileID: 8970436643643640343}
   m_Layer: 0
-  m_Name: Parallax.05
+  m_Name: Parallax.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -435,7 +431,7 @@ Transform:
   m_GameObject: {fileID: 5536310922418385999}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 6}
+  m_LocalPosition: {x: 0, y: 0, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -508,7 +504,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aab07d66d8b641b4080aa26b876ab538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetObject: {fileID: 5536310922418385999}
   speed: 0.01
 --- !u!1 &7194134619388314528
 GameObject:
@@ -522,7 +517,7 @@ GameObject:
   - component: {fileID: 1326305235818187898}
   - component: {fileID: 5275064057752328589}
   m_Layer: 0
-  m_Name: Parallax.04
+  m_Name: Parallax.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -537,7 +532,7 @@ Transform:
   m_GameObject: {fileID: 7194134619388314528}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 5}
+  m_LocalPosition: {x: 0, y: 0, z: 4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -610,7 +605,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aab07d66d8b641b4080aa26b876ab538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetObject: {fileID: 7194134619388314528}
   speed: 0.01
 --- !u!1 &9078581778757856359
 GameObject:
@@ -636,16 +630,16 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9078581778757856359}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 6.18, z: 10}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7248801109766596454}
-  - {fileID: 3837342088019357193}
-  - {fileID: 4156343466691566577}
+  - {fileID: 7480818906621171247}
   - {fileID: 7511067991504013270}
   - {fileID: 4888313384811730032}
-  - {fileID: 7480818906621171247}
+  - {fileID: 4156343466691566577}
+  - {fileID: 3837342088019357193}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
