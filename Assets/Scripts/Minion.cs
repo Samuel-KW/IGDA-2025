@@ -8,6 +8,7 @@ public class Minion : MonoBehaviour
     [SerializeField] Rigidbody2D rb;
     public dynamic task;
     private Transform player;
+    [SerializeField] GameObject deathParticle;
     // Update is called once per frame
     void Start(){
         BubbleManager.AddBubble(gameObject);
@@ -61,6 +62,8 @@ public class Minion : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision){
         if(collision.collider.gameObject.layer == LayerMask.NameToLayer("Hazard")){
             Debug.Log("Killed");
+            GameObject dp = Instantiate(deathParticle, new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), Quaternion.identity);
+            Destroy(dp, 5f);
             BubbleManager.RemoveBubble(this.gameObject);
             Destroy(this.gameObject);
         }

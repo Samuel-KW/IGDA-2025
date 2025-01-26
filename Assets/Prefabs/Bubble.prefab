@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 4451207809700291680}
-  task: {fileID: 0}
+  deathParticle: {fileID: 6324407106244417127, guid: d342398c74348bc48975b0ce4dee06f0, type: 3}
 --- !u!58 &9172100159405776025
 CircleCollider2D:
   m_ObjectHideFlags: 0
