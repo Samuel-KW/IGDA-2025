@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3353815883816789506}
   - component: {fileID: 6987980243647572198}
   m_Layer: 0
-  m_Name: 5x1 Brick
+  m_Name: 5x1 Grass
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -103,7 +103,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8a76694060052ef41a47d1ad208e51eb, type: 2}
+  - {fileID: 2100000, guid: bb1279f5b60d5554991c736aeb6283f8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

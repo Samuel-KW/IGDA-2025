@@ -20,16 +20,20 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Middle
+  m_Name: Bricks
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_Parent: {fileID: 2100000, guid: bb1279f5b60d5554991c736aeb6283f8, type: 2}
   m_ModifiedSerializedProperties: 24
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - _METALLICSPECGLOSSMAP
+  - _NORMALMAP
+  - _OCCLUSIONMAP
+  - _PARALLAXMAP
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 1
-  m_CustomRenderQueue: 2000
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
   stringTagMap:
     RenderType: Opaque
   disabledShaderPasses:
@@ -39,18 +43,39 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 5cfd6e3a29f4f2d4aa5524115e0d11fc, type: 3}
+        m_Texture: {fileID: 2800000, guid: 7a325356d645e9a4e99c2908f8a5eb91, type: 3}
         m_Scale: {x: 5, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 2800000, guid: 17d24a6232b4743409aff94af2accbcc, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 5cfd6e3a29f4f2d4aa5524115e0d11fc, type: 3}
+        m_Texture: {fileID: 2800000, guid: 7a325356d645e9a4e99c2908f8a5eb91, type: 3}
         m_Scale: {x: 5, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 2800000, guid: 2236d01e9e833f44aa433e2132900701, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 2800000, guid: 7a325356d645e9a4e99c2908f8a5eb91, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 2800000, guid: 7927e697f41fbf94482522e3ebe044a3, type: 3}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Cull: 0
+    - _Cull: 2
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _Parallax: 0.02
+    - _Smoothness: 0.5
     m_Colors:
-    - _BaseColor: {r: 0.43118116, g: 0.13710396, b: 0.745283, a: 1}
-    - _Color: {r: 0.43118113, g: 0.13710392, b: 0.745283, a: 1}
+    - _BaseColor: {r: 0.5988439, g: 0.5007565, b: 0.8773585, a: 1}
+    - _Color: {r: 0.5988439, g: 0.50075644, b: 0.8773585, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

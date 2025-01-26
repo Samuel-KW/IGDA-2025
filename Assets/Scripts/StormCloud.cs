@@ -25,6 +25,6 @@ public class StormCloud : MonoBehaviour
     void Update()
     {
         Vector3 pos = targetObject.transform.position;
-        transform.position = new Vector3(pos.x, Math.Min(pos.y, minY), transform.position.z);
+        transform.position = new Vector3(pos.x, Math.Max(pos.y, minY), transform.position.z);
     }
 }
