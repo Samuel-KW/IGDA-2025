@@ -450,6 +450,7 @@ MonoBehaviour:
   jumpAmount: 10
   jumpDelay: 0.5
   frameRate: 0.1
+  jumpSprite: {fileID: -160688923, guid: c03842d162c294a459f44a29ae7dee1f, type: 3}
   sprites:
   - {fileID: -1896411463, guid: d7a1b927fb4ffa74291aa0963d8a443c, type: 3}
   - {fileID: -799961193, guid: 952e6cf8d157b434dbcc5e9187c90b8b, type: 3}
@@ -495,17 +496,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.024032235}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.90700006, y: 1.3495001}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 1.5215521}
   m_EdgeRadius: 0
 --- !u!50 &568914726
 Rigidbody2D:
@@ -578,7 +579,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: -1896411463, guid: d7a1b927fb4ffa74291aa0963d8a443c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
