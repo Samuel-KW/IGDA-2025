@@ -14,6 +14,9 @@ public class InputManager : MonoBehaviour
     }
     void LateUpdate()
     {
+        if(BubbleManager.allBubbleList.Count <= 0){
+            BubbleManager.Lose();
+        }
         found = false;
         foreach (ObjectBubbleTaskable obj in objects){
             if (obj != null){
@@ -25,8 +28,6 @@ public class InputManager : MonoBehaviour
                     component = obj.GetComponent<BubbleOctopusWin>();
                 }
                 
-                
-                //Debug.Log(soapBottleComponent);
                 //Debug.Log((Vector3.Distance(BubbleManager.GetMousePos(), obj.transform.position)));
                 if(component != null && obj.neededBubbles > obj.bubbles.Count && 
                 (Vector3.Distance(BubbleManager.GetMousePos(), obj.transform.position) < 2f) && 

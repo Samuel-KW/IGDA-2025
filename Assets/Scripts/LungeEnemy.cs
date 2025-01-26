@@ -84,11 +84,13 @@ public class LungeEnemy : MonoBehaviour
 
         foreach (GameObject bubble in BubbleManager.allBubbleList)
         {
-            float distance = Vector2.Distance(transform.position, bubble.transform.position);
-            if (distance < distanceToAttack && distance < minDistance)
-            {
-                closest = bubble;
-                minDistance = distance;
+            if(bubble != null){
+                float distance = Vector2.Distance(transform.position, bubble.transform.position);
+                if (distance < distanceToAttack && distance < minDistance)
+                {
+                    closest = bubble;
+                    minDistance = distance;
+                }
             }
         }
 

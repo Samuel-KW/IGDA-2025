@@ -11,6 +11,8 @@ public class BubbleOctopusWin : ObjectBubbleTaskable
     // Update is called once per frame
     void Update()
     {
-        
+        if(bubbles.Count >= neededBubbles){
+            BubbleManager.Win();
+        }
     }
 }

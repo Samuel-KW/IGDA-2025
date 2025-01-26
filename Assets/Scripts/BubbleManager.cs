@@ -41,6 +41,15 @@
         audioManager.SetMusicPowerNum(allBubbleList.Count);
         }
 
+
+        public static void Win(){
+            Debug.Log("Win!");
+        }
+
+        public static void Lose(){
+            Debug.Log("Lost!");
+        }
+
         public static void RecallAllBubbles(){
             //Debug.Log(allBubbleList.Count);
             foreach(GameObject bubble in allBubbleList){
