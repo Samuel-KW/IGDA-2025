@@ -17,13 +17,21 @@ public class InputManager : MonoBehaviour
         found = false;
         foreach (ObjectBubbleTaskable obj in objects){
             if (obj != null){
-                var soapBottleComponent = obj.GetComponent<SoapBottle>();
+                var component = obj.GetComponent<ObjectBubbleTaskable>();
+                if(obj.GetComponent<SoapBottle>() != null){
+                    component = obj.GetComponent<SoapBottle>();
+                }
+                if(obj.GetComponent<BubbleOctopusWin>() != null){
+                    component = obj.GetComponent<BubbleOctopusWin>();
+                }
+                
+                
                 //Debug.Log(soapBottleComponent);
                 //Debug.Log((Vector3.Distance(BubbleManager.GetMousePos(), obj.transform.position)));
-                if(soapBottleComponent != null && obj.neededBubbles > obj.bubbles.Count && 
+                if(component != null && obj.neededBubbles > obj.bubbles.Count && 
                 (Vector3.Distance(BubbleManager.GetMousePos(), obj.transform.position) < 2f) && 
                 Input.GetMouseButtonDown(0)){
-                    soapBottleComponent.AssignNewBubbleToSoapBottle();
+                    component.AssignNewBubble();
                     //Debug.Log("Happening");
                     found = true;
                 }

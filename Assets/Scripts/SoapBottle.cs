@@ -26,13 +26,6 @@ public class SoapBottle : ObjectBubbleTaskable
         }
     }
 
-    public void AssignNewBubbleToSoapBottle(){
-        if(BubbleManager.playerBubbleList.Count > 0){
-            GameObject bubbleToAssign = BubbleManager.playerBubbleList[0];
-            BubbleManager.AssignBubble(this, bubbleToAssign);
-        }
-    }
-
     void PushObjectToNearestSpawner(){
         Vector3 moveDirection = spawner.transform.position - transform.position;
         Vector3 movement = moveDirection.normalized * Time.deltaTime * speed;
