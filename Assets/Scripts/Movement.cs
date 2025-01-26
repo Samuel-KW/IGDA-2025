@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 
 public class Movement : MonoBehaviour
@@ -22,11 +23,27 @@ public class Movement : MonoBehaviour
 
 
     bool isGrounded = false;
+
+    //sfx vars
+    SFXController sfx = null;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer.sprite = sprites[0];
+
+        //sfx init
+        foreach (Transform child in transform)
+        {
+            if (child.name.Contains("SFX"))
+            {
+                sfx = child.GetComponent<SFXController>();
+            }
+        }
+
+        
     }
 
     // Update is called once per frame
@@ -49,13 +66,16 @@ public class Movement : MonoBehaviour
                 {
                     spriteRenderer.flipX = true;   
                 }
+                sfx.StartLoop(0.5f, new List<string> { "walk1", "walk2", "walk3", "walk4" }, 0.1f);
+
             }
             //
             else
             {
                 running = false;
                 StopCoroutine("AnimateSprites");
-                spriteRenderer.sprite = sprites[0];  
+                spriteRenderer.sprite = sprites[0];
+                sfx.EndLoop();
             }
             //
             rb.linearVelocity = new Vector2(myVector.x * speed, rb.linearVelocity.y);
@@ -68,6 +88,8 @@ public class Movement : MonoBehaviour
                 elapsedTime = jumpDelay;
                 
             }
+            
+
         }
         else if(Input.GetKey(KeyCode.Space) && elapsedTime <= 0f)
         {
@@ -80,6 +102,9 @@ public class Movement : MonoBehaviour
         }
         
         elapsedTime -= Time.deltaTime;
+
+
+
     }
     void OnCollisionEnter2D(Collision2D col)
     {

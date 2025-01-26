@@ -45,7 +45,7 @@ public class AudioManager : MonoBehaviour
 
 
         //SetPitch(1.0f);
-        //MuteAll();
+        MuteAll();
         //PlayAll();
         //SetMusicPowerNum(101.0f);
         //StartCoroutine(mus());
