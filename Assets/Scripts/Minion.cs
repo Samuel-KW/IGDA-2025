@@ -26,7 +26,7 @@ public class Minion : MonoBehaviour
             Debug.Log("Physical task: " + typeof(ObjectBubbleTaskable).IsAssignableFrom(task.GetType()));
             Debug.Log("Meta task: " + typeof(BubbleTaskable).IsAssignableFrom(task.GetType()));
         }*/
-
+        //Debug.Log(task.GetType());
         if(task != null && typeof(ObjectBubbleTaskable).IsAssignableFrom(task.GetType())){
             //Debug.Log("Object Bubble Task");
             MoveTo(task.transform.position);
@@ -36,7 +36,7 @@ public class Minion : MonoBehaviour
             MoveTo(task.movePosition);
         }
         else if(player != null){
-            //MoveTo(mouseWorldPos);
+            //Debug.Log("Move Order");
             MoveTo(player.position);
         }
         

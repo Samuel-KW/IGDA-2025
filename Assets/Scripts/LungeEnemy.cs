@@ -17,6 +17,11 @@ public class LungeEnemy : MonoBehaviour
 
     void Update()
     {
+        closestBubble = FindClosestBubble();
+        if(closestBubble == null){
+            lungedTimer = lungedTime;
+            chargedTimer = chargedTime;
+        }
         // Handle timers
         if (lungedTimer > 0f)
         {
@@ -77,13 +82,15 @@ public class LungeEnemy : MonoBehaviour
         GameObject closest = null;
         float minDistance = Mathf.Infinity;
 
-        foreach (GameObject bubble in BubbleManager.playerBubbleList)
+        foreach (GameObject bubble in BubbleManager.allBubbleList)
         {
-            float distance = Vector2.Distance(transform.position, bubble.transform.position);
-            if (distance < distanceToAttack && distance < minDistance)
-            {
-                closest = bubble;
-                minDistance = distance;
+            if(bubble != null){
+                float distance = Vector2.Distance(transform.position, bubble.transform.position);
+                if (distance < distanceToAttack && distance < minDistance)
+                {
+                    closest = bubble;
+                    minDistance = distance;
+                }
             }
         }
 

@@ -10,20 +10,29 @@ public class InputManager : MonoBehaviour
     // Update is called once per frame
 
     void Awake(){
-        objects.Add(Object.FindFirstObjectByType<ObjectBubbleTaskable>());
+        objects.AddRange(Resources.FindObjectsOfTypeAll(typeof(ObjectBubbleTaskable)) as ObjectBubbleTaskable[]);
     }
     void LateUpdate()
     {
+        if(BubbleManager.allBubbleList.Count <= 0){
+            BubbleManager.Lose();
+        }
         found = false;
         foreach (ObjectBubbleTaskable obj in objects){
             if (obj != null){
-                var soapBottleComponent = obj.GetComponent<SoapBottle>();
-                //Debug.Log(soapBottleComponent);
+                var component = obj.GetComponent<ObjectBubbleTaskable>();
+                if(obj.GetComponent<SoapBottle>() != null){
+                    component = obj.GetComponent<SoapBottle>();
+                }
+                if(obj.GetComponent<BubbleOctopusWin>() != null){
+                    component = obj.GetComponent<BubbleOctopusWin>();
+                }
+                
                 //Debug.Log((Vector3.Distance(BubbleManager.GetMousePos(), obj.transform.position)));
-                if(soapBottleComponent != null && obj.neededBubbles > obj.bubbles.Count && 
+                if(component != null && obj.neededBubbles > obj.bubbles.Count && 
                 (Vector3.Distance(BubbleManager.GetMousePos(), obj.transform.position) < 2f) && 
                 Input.GetMouseButtonDown(0)){
-                    soapBottleComponent.AssignNewBubbleToSoapBottle();
+                    component.AssignNewBubble();
                     //Debug.Log("Happening");
                     found = true;
                 }

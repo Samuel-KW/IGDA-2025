@@ -32,4 +32,11 @@ public class ObjectBubbleTaskable : MonoBehaviour
         }
         bubbles.Clear();
     }
+
+    public void AssignNewBubble(){
+        if(BubbleManager.playerBubbleList.Count > 0){
+            GameObject bubbleToAssign = BubbleManager.playerBubbleList[0];
+            BubbleManager.AssignBubble(this, bubbleToAssign);
+        }
+    }
 }
