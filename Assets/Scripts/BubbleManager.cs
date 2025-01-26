@@ -12,7 +12,11 @@
         public static List<GameObject> allBubbleList;
         public static List<GameObject> playerBubbleList;
         public static ArrayList bubbleTaskList;
+        public static WinLostHandler ui;
         public static void AddBubble(GameObject bubbleRef){
+            if(ui == null){
+                ui = (WinLostHandler)WinLostHandler.FindFirstObjectByType(typeof(WinLostHandler));
+            }
             if(playerBubbleList == null){
                 playerBubbleList = new List<GameObject>();
             }
@@ -43,10 +47,20 @@
 
 
         public static void Win(){
+            if(ui == null){
+                ui = (WinLostHandler)WinLostHandler.FindFirstObjectByType(typeof(WinLostHandler));
+            }
+            GameObject winUI = ui.gameObject.transform.GetChild(0).gameObject;
+            winUI.SetActive(true);
             Debug.Log("Win!");
         }
 
         public static void Lose(){
+            if(ui == null){
+                ui = (WinLostHandler)WinLostHandler.FindFirstObjectByType(typeof(WinLostHandler));
+            }
+            GameObject loseUI = ui.gameObject.transform.GetChild(1).gameObject;
+            loseUI.SetActive(true);
             Debug.Log("Lost!");
         }
 

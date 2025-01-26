@@ -5,6 +5,7 @@ public class WinLostHandler : MonoBehaviour
 {
     public void Restart()
     {
+        Debug.Log("Working")
         SceneManager.LoadScene("Scenes/intro");
     }
 
