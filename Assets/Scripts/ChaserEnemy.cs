@@ -56,15 +56,19 @@ public class ChaserEnemy : MonoBehaviour
             transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
 
         }
+        else{
+            rb.linearVelocity = Vector2.zero;
+            rb.angularVelocity = 0;
+        }
     }
 
 
-    /*void OnCollisionEnter2D(Collision2D collision){
+    void OnCollisionEnter2D(Collision2D collision){
         if(collision.collider.gameObject.layer == LayerMask.NameToLayer("Hazard")){
             BubbleManager.RemoveBubble(this.gameObject);
             Destroy(this.gameObject);
         }
-    }*/
+    }
 
     
     
