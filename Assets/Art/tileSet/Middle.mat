@@ -40,15 +40,17 @@ Material:
     m_TexEnvs:
     - _BaseMap:
         m_Texture: {fileID: 2800000, guid: 5cfd6e3a29f4f2d4aa5524115e0d11fc, type: 3}
-        m_Scale: {x: 4, y: 1}
+        m_Scale: {x: 5, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 5cfd6e3a29f4f2d4aa5524115e0d11fc, type: 3}
-        m_Scale: {x: 4, y: 1}
+        m_Scale: {x: 5, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _Cull: 0
-    m_Colors: []
+    m_Colors:
+    - _BaseColor: {r: 0.43118116, g: 0.13710396, b: 0.745283, a: 1}
+    - _Color: {r: 0.43118113, g: 0.13710392, b: 0.745283, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

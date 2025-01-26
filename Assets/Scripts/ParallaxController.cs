@@ -4,15 +4,17 @@ public class ParallaxController : MonoBehaviour
 {
     private float width, height, offset;
     private Vector3 startPos;
+    private GameObject targetObject;
 
-    public GameObject targetObject;
     public float speed = 0.01f;
 
     void Start()
     {
+        targetObject = GameObject.FindGameObjectWithTag("Player");
+
         if (targetObject == null)
         {
-            Debug.LogError("Target Object is not assigned");
+            Debug.LogError("Player Object is not defined");
             return;
         }
 
