@@ -27,30 +27,26 @@ public class AudioManager : MonoBehaviour
 
     int prev_power = 0;
 
-    private void Awake()
-    {
-        // Singleton pattern nerdge
-        if (Instance != null && Instance != this)
-        {
-            Destroy(this);
-        }
-        else
-        {
-            Instance = this;
-            DontDestroyOnLoad(Instance);
-        }
+ 
+    void Awake() {
+        // Populate the list
+        music.AddRange(GetComponentsInChildren<AudioSource>());
     }
+
 
     // Start is called before the first frame update
     void Start()
     {
-        foreach (Transform child in transform)
+        /*foreach (Transform child in transform)
         {
-            music.Add(child.GetComponent<AudioSource>());
-        }
+            AudioSource audioSource = child.GetComponent<AudioSource>();
+            music.Add(audioSource);
+        }*/
+
+
         //SetPitch(1.0f);
-        MuteAll();
-        PlayAll();
+        //MuteAll();
+        //PlayAll();
         //SetMusicPowerNum(101.0f);
         //StartCoroutine(mus());
     }
@@ -63,7 +59,6 @@ public class AudioManager : MonoBehaviour
             if (val >= thresholds[i]) power += 1;
         }
 
-        UnityEngine.Debug.Log(power.ToString());
         if (power != prev_power)
         {
             //MuteAll();
@@ -266,16 +261,16 @@ public class AudioManager : MonoBehaviour
         timer += Time.deltaTime * timer_multiplier;
         if ((int)timer % 16 == 15 && (queue_add.Count != 0 || queue_remove.Count != 0))
         {
-            foreach (AudioSource q in queue_add)
+            // Create copies to iterate over
+            var queueAddCopy = new List<AudioSource>(queue_add);
+            var queueRemoveCopy = new List<AudioSource>(queue_remove);
+
+            foreach (AudioSource q in queueAddCopy)
             {
-                //if (!q.isPlaying)
-                //{
-                //    q.Play(); 
-                //}
                 q.volume = q.reverbZoneMix;
                 queue_add.Remove(q);
             }
-            foreach (AudioSource q in queue_remove)
+            foreach (AudioSource q in queueRemoveCopy)
             {
                 q.volume = 0.0f;
                 queue_remove.Remove(q);
@@ -323,17 +318,26 @@ public class AudioManager : MonoBehaviour
         prev_progress = tracker.time;
     }
 
+    private void PrintMusicSourceNames()
+    {
+        UnityEngine.Debug.LogWarning("Music :" + music.Count);
+        foreach (AudioSource song in music)
+        {
+            UnityEngine.Debug.Log("Available Music Source: " + song.name);
+        }
+    }
 
     private AudioSource Find(string id)
     {
         foreach (AudioSource song in music)
         {
-            if (song.name == id)
+            if (song.name.Contains(id))
             {
                 return song;
             }
         }
-        UnityEngine.Debug.Log("String id " + id + " incorrect");
+        UnityEngine.Debug.LogWarning("Song Not Found: " + id);
+        PrintMusicSourceNames();
         return null;
     }
 
@@ -358,11 +362,13 @@ public class AudioManager : MonoBehaviour
         {
             if (queue_remove.Contains(source)) { queue_remove.Remove(source); }
             queue_add.Add(source);
+            source.Play();
         }
         else
         {
             if (queue_add.Contains(source)) { queue_add.Remove(source); }
             queue_remove.Add(source);
+            source.Stop();
         }
     }
 

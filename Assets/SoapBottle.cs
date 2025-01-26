@@ -31,7 +31,6 @@ public class SoapBottle : ObjectBubbleTaskable
 
     public void AssignNewBubbleToSoapBottle(){
         if(BubbleManager.playerBubbleList.Count > 0){
-            Debug.Log("Made it");
             GameObject bubbleToAssign = BubbleManager.playerBubbleList[0];
             BubbleManager.AssignBubble(this, bubbleToAssign);
         }

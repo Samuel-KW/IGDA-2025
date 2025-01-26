@@ -1,6 +1,7 @@
 using Microsoft.CSharp;
 using UnityEngine;
 using System.Dynamic;
+using System.Collections;
 
 public class Minion : MonoBehaviour
 {
@@ -10,8 +11,8 @@ public class Minion : MonoBehaviour
     // Update is called once per frame
     void Start(){
         BubbleManager.AddBubble(gameObject);
-        Debug.Log("Added");
-        player = GameObject.Find("Player").transform;
+        Debug.Log("Start Coroutine");
+        StartCoroutine(GetPlayer());
     }
 
     void Update()
@@ -33,7 +34,7 @@ public class Minion : MonoBehaviour
             //Debug.Log("Meta Bubble Task");
             MoveTo(task.movePosition);
         }
-        else{
+        else if(player != null){
             //MoveTo(mouseWorldPos);
             MoveTo(player.position);
         }
@@ -63,5 +64,32 @@ public class Minion : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+
+    IEnumerator GetPlayer() {
+        Debug.Log("CoRoutine Started");
+        float timeWaited = 0f;
+        while (timeWaited < 5f) {  // Try for 5 seconds max
+            Debug.Log("Executing");
+            
+            player = GameObject.Find("Player")?.transform;
+            if (player != null) {
+
+                Debug.Log(player);
+                break;  // Exit if found
+            }
+            timeWaited += Time.deltaTime;
+            Debug.Log(timeWaited);
+            yield return null;  // Wait until next frame
+        }
+
+        Debug.LogWarning("Player not found after waiting.");
+
+        if (player == null) {
+            Debug.LogWarning("Player not found after waiting.");
+        }
+    }
+
+
 
 }

@@ -1,4 +1,5 @@
     using UnityEngine;
+    using UnityEditor;
     using System.Collections.Generic;
     using System.Collections;
     using Microsoft.CSharp;
@@ -6,6 +7,8 @@
 
     public static class BubbleManager
     {
+        public static GameObject audioManagerObject;
+        public static AudioManager audioManager;
         public static List<GameObject> allBubbleList;
         public static List<GameObject> playerBubbleList;
         public static ArrayList bubbleTaskList;
@@ -23,6 +26,19 @@
                 allBubbleList.Add(bubbleRef);
             }
 
+            if(audioManager == null){
+            // Place the prefab in a Resources folder (e.g., Assets/Resources/Prefabs/)
+            string prefabPath = "Prefabs/AudioManager";
+            GameObject loadedPrefab = Resources.Load<GameObject>(prefabPath);
+            
+            if(loadedPrefab != null){
+                audioManagerObject = GameObject.Instantiate(loadedPrefab, Vector3.zero, Quaternion.identity);
+                audioManager = audioManagerObject.GetComponent<AudioManager>();
+            } else {
+                Debug.LogError("AudioManager prefab not found in Resources folder");
+            }
+        }
+        audioManager.SetMusicPowerNum(allBubbleList.Count);
             //Debug.Log(playerBubbleList.Count);
         }
 
@@ -44,6 +60,11 @@
             //Debug.Log(index);
             if(index != -1)
             playerBubbleList.RemoveAt(index);
+            index = allBubbleList.FindIndex(b => b == bubbleRef);
+            //Debug.Log(index);
+            if(index != -1)
+            allBubbleList.RemoveAt(index);
+            
         }
 
         public static void AssignBubble(dynamic task, GameObject bubbleRef){ 

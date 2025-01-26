@@ -24,7 +24,7 @@ public class InputManager : MonoBehaviour
                 (Vector3.Distance(BubbleManager.GetMousePos(), obj.transform.position) < 2f) && 
                 Input.GetMouseButtonDown(0)){
                     soapBottleComponent.AssignNewBubbleToSoapBottle();
-                    Debug.Log("Happening");
+                    //Debug.Log("Happening");
                     found = true;
                 }
             }
