@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3543462638912353860}
   - component: {fileID: 2204968192049068724}
-  - component: {fileID: 3614069780173708871}
   - component: {fileID: 8216450512554065371}
   - component: {fileID: 8033601124244600422}
+  - component: {fileID: 7733812422757647997}
   m_Layer: 6
   m_Name: UnicornBoss
   m_TagString: Untagged
@@ -90,28 +90,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3614069780173708871
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7453534581102160478}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc12e847eeab8a84ab866e8cf21c73ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 8216450512554065371}
-  distanceToAttack: 10
-  speed: 6
-  chargedTime: 1
-  lungedTime: 1
-  sprites:
-  - {fileID: 21300000, guid: 78f0c69e093319e4ea771e400598fe93, type: 3}
-  - {fileID: 21300000, guid: 53c8203d17acc32468fc21aaf3b4ecc3, type: 3}
-  spriteRenderer: {fileID: 2204968192049068724}
-  rotOffset: 180
 --- !u!50 &8216450512554065371
 Rigidbody2D:
   serializedVersion: 5
@@ -185,3 +163,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 11.554602, y: 7.630234}
   m_EdgeRadius: 0
+--- !u!114 &7733812422757647997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7453534581102160478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2937b72991d191408ca4bc0a68aa163, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 8216450512554065371}
+  distanceToAttack: 15
+  speed: 5
+  chargedTime: 2
+  lungedTime: 1
+  sprites:
+  - {fileID: 21300000, guid: 0c966b3eae06fa847957d2c4211f0bc6, type: 3}
+  - {fileID: 21300000, guid: 53c8203d17acc32468fc21aaf3b4ecc3, type: 3}
+  spriteRenderer: {fileID: 2204968192049068724}
+  rotOffset: 180

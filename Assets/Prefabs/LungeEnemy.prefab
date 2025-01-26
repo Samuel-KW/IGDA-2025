@@ -111,6 +111,7 @@ MonoBehaviour:
   - {fileID: -445368013, guid: dc0ad43c229afe34fa4f38783388d330, type: 3}
   - {fileID: -852325904, guid: adc565d29d3a249469bd713b8e519db2, type: 3}
   spriteRenderer: {fileID: 2138004412821788454}
+  rotOffset: 180
 --- !u!50 &1906846865027600903
 Rigidbody2D:
   serializedVersion: 5
