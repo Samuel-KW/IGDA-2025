@@ -1626,6 +1626,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4856908178390947705, guid: 5cbd6f0017cf3284d8e509a46d5ded32, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1466272950}
+    - target: {fileID: 4856908178390947705, guid: 5cbd6f0017cf3284d8e509a46d5ded32, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Restart
+      objectReference: {fileID: 0}
     - target: {fileID: 8407425215938297979, guid: 5cbd6f0017cf3284d8e509a46d5ded32, type: 3}
       propertyPath: m_Name
       value: WinLossScreen
@@ -4065,6 +4073,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67698b4f6e0f4d547bbbcd8ae3c69d64, type: 3}
+--- !u!114 &1466272950 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6255927779611005629, guid: 5cbd6f0017cf3284d8e509a46d5ded32, type: 3}
+  m_PrefabInstance: {fileID: 454004004}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f88f910e2d4dcab4cbe9723abc531f64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1467460797
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5481,6 +5500,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1093785483578903465, guid: cc155dd96e4271d47bef4c7d7897cb80, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.0588963
+      objectReference: {fileID: 0}
+    - target: {fileID: 1093785483578903465, guid: cc155dd96e4271d47bef4c7d7897cb80, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.02618
+      objectReference: {fileID: 0}
     - target: {fileID: 5207375511940135007, guid: cc155dd96e4271d47bef4c7d7897cb80, type: 3}
       propertyPath: m_LocalPosition.x
       value: 15.6
