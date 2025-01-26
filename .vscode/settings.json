@@ -56,5 +56,6 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "IGDA-2025.sln"
+    "dotnet.defaultSolution": "IGDA-2025.sln",
+    "FSharp.suggestGitignore": false
 }
