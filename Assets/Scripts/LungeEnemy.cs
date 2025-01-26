@@ -45,7 +45,9 @@ public class LungeEnemy : MonoBehaviour
                 directionToBubble = closestBubble.transform.position - transform.position;
 
                 // Lunge toward the bubble using Rigidbody2D physics
-                rb.linearVelocity = directionToBubble.normalized * speed;
+                rb.AddForce(-transform.right * speed, ForceMode2D.Impulse);
+                chargedTimer = 0f;
+                rb.angularVelocity = 0f;
             }
         }
         else if (lungedTimer <= 0f)
@@ -54,8 +56,9 @@ public class LungeEnemy : MonoBehaviour
             spriteRenderer.sprite = sprites[1];
             rb.linearVelocity = Vector2.zero;
 
+            closestBubble = FindClosestBubble();
             if(closestBubble != null){
-                Debug.Log(closestBubble);
+                //Debug.Log(closestBubble);
                 Vector3 targ = closestBubble.transform.position;
                 targ.z = 0f;
 
@@ -64,8 +67,7 @@ public class LungeEnemy : MonoBehaviour
                 targ.y = targ.y - objectPos.y;
 
                 float angle = Mathf.Atan2(targ.y, targ.x) * Mathf.Rad2Deg;
-                Debug.Log(angle);
-                transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+                transform.rotation = Quaternion.Euler(new Vector3(0, 0, (angle-180)));
             }
         }
     }
@@ -87,4 +89,12 @@ public class LungeEnemy : MonoBehaviour
 
         return closest;
     }
+
+    void OnCollisionEnter2D(Collision2D collision){
+        if(collision.collider.gameObject.layer == LayerMask.NameToLayer("Hazard")){
+            Debug.Log("Killed Enemy");
+            Destroy(this.gameObject);
+        }
+    }
+    
 }
