@@ -10,7 +10,7 @@ public class ParallaxController : MonoBehaviour
 
     void Start()
     {
-        targetObject = GameObject.FindWithTag("Player");
+        targetObject = GameObject.FindGameObjectWithTag("Player");
 
         if (targetObject == null)
         {
