@@ -1,20 +1,12 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: c3765b19c20b0fc41ad64344d083a0eb
-=======
-guid: b5fe1de3d0d6c5b4fb389435abc8ec32
->>>>>>> origin/May-Branch
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
     mipMapMode: 0
-<<<<<<< HEAD
     enableMipMap: 0
-=======
-    enableMipMap: 1
->>>>>>> origin/May-Branch
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -45,7 +37,6 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-<<<<<<< HEAD
     wrapU: 1
     wrapV: 1
     wrapW: 0
@@ -53,20 +44,10 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-=======
-    wrapU: 0
-    wrapV: 0
-    wrapW: 0
-  nPOTScale: 1
-  lightmap: 0
-  compressionQuality: 50
-  spriteMode: 0
->>>>>>> origin/May-Branch
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-<<<<<<< HEAD
   spritePixelsToUnits: 1000
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -74,15 +55,6 @@ TextureImporter:
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
-=======
-  spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
-  alphaUsage: 1
-  alphaIsTransparency: 0
-  spriteTessellationDetail: -1
-  textureType: 0
->>>>>>> origin/May-Branch
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -136,7 +108,6 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-<<<<<<< HEAD
     sprites:
     - serializedVersion: 2
       name: topMiddle_0
@@ -160,18 +131,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-=======
-    sprites: []
->>>>>>> origin/May-Branch
     outline: []
     customData: 
     physicsShape: []
     bones: []
-<<<<<<< HEAD
     spriteID: 8f4693ac1c3fd504fa412a8721af2538
-=======
-    spriteID: 
->>>>>>> origin/May-Branch
     internalID: 0
     vertices: []
     indices: 
@@ -180,12 +144,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-<<<<<<< HEAD
     nameFileIdTable:
       topMiddle_0: 515827947
-=======
-    nameFileIdTable: {}
->>>>>>> origin/May-Branch
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,20 +1,12 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: 5cfd6e3a29f4f2d4aa5524115e0d11fc
-=======
-guid: c2d7afb8d5b490047b8e5f7a9b7668d4
->>>>>>> origin/May-Branch
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
     mipMapMode: 0
-<<<<<<< HEAD
     enableMipMap: 0
-=======
-    enableMipMap: 1
->>>>>>> origin/May-Branch
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -48,22 +40,14 @@ TextureImporter:
     wrapU: 0
     wrapV: 0
     wrapW: 0
-<<<<<<< HEAD
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-=======
-  nPOTScale: 1
-  lightmap: 0
-  compressionQuality: 50
-  spriteMode: 0
->>>>>>> origin/May-Branch
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-<<<<<<< HEAD
   spritePixelsToUnits: 1000
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -71,15 +55,6 @@ TextureImporter:
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
-=======
-  spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
-  alphaUsage: 1
-  alphaIsTransparency: 0
-  spriteTessellationDetail: -1
-  textureType: 0
->>>>>>> origin/May-Branch
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -133,7 +108,6 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-<<<<<<< HEAD
     sprites:
     - serializedVersion: 2
       name: middle_0
@@ -157,18 +131,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-=======
-    sprites: []
->>>>>>> origin/May-Branch
     outline: []
     customData: 
     physicsShape: []
     bones: []
-<<<<<<< HEAD
     spriteID: 67065304ef2f2454b80f36d6d901d132
-=======
-    spriteID: 
->>>>>>> origin/May-Branch
     internalID: 0
     vertices: []
     indices: 
@@ -177,12 +144,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-<<<<<<< HEAD
     nameFileIdTable:
       middle_0: -686962545
-=======
-    nameFileIdTable: {}
->>>>>>> origin/May-Branch
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

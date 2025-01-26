@@ -1,20 +1,12 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: fab84fe4fe81b5b45abb4609b6056532
-=======
-guid: c03842d162c294a459f44a29ae7dee1f
->>>>>>> origin/May-Branch
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
     mipMapMode: 0
-<<<<<<< HEAD
     enableMipMap: 1
-=======
-    enableMipMap: 0
->>>>>>> origin/May-Branch
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -45,7 +37,6 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-<<<<<<< HEAD
     wrapU: 0
     wrapV: 0
     wrapW: 0
@@ -53,20 +44,10 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 0
-=======
-    wrapU: 1
-    wrapV: 1
-    wrapW: 0
-  nPOTScale: 0
-  lightmap: 0
-  compressionQuality: 50
-  spriteMode: 2
->>>>>>> origin/May-Branch
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-<<<<<<< HEAD
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -74,15 +55,6 @@ TextureImporter:
   alphaIsTransparency: 0
   spriteTessellationDetail: -1
   textureType: 0
-=======
-  spritePixelsToUnits: 2000
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
-  alphaUsage: 1
-  alphaIsTransparency: 1
-  spriteTessellationDetail: -1
-  textureType: 8
->>>>>>> origin/May-Branch
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -136,42 +108,12 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-<<<<<<< HEAD
     sprites: []
-=======
-    sprites:
-    - serializedVersion: 2
-      name: childJump_0
-      rect:
-        serializedVersion: 2
-        x: 515
-        y: 1031
-        width: 1862
-        height: 2153
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f892b0b02f354714dae0e5b15fe6fd35
-      internalID: -160688923
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
->>>>>>> origin/May-Branch
     outline: []
     customData: 
     physicsShape: []
     bones: []
-<<<<<<< HEAD
     spriteID: 
-=======
-    spriteID: 5e97eb03825dee720800000000000000
->>>>>>> origin/May-Branch
     internalID: 0
     vertices: []
     indices: 
@@ -180,12 +122,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-<<<<<<< HEAD
     nameFileIdTable: {}
-=======
-    nameFileIdTable:
-      childJump_0: -160688923
->>>>>>> origin/May-Branch
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
