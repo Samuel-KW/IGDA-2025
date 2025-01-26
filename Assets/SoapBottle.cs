@@ -7,7 +7,6 @@ public class SoapBottle : ObjectBubbleTaskable
     [SerializeField] Spawner spawner;
 
     [SerializeField] float speed;
-    private bool proximity = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -19,10 +18,8 @@ public class SoapBottle : ObjectBubbleTaskable
     {
         foreach(GameObject bubble in bubbles){
             if(!(Vector3.Distance(bubble.transform.position, transform.position) < 3f)){
-                proximity = false;
                 return;
             }
-            proximity = true;
         }
         if(neededBubbles <= bubbles.Count){
             PushObjectToNearestSpawner();

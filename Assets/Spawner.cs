@@ -8,7 +8,6 @@ public class Spawner : MonoBehaviour
     [SerializeField] private GameObject bubble;
     [SerializeField] private GameObject bubbleFolder;
     [SerializeField] private int spawnTimes;
-    private bool running = false;
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -32,7 +31,6 @@ public class Spawner : MonoBehaviour
     public void Spawn(int rewardBubbles){
         spawnCount = rewardBubbles;
         StartCoroutine("SpawnRoutine");
-        running = true;
     }
 
     IEnumerator SpawnRoutine(){
@@ -48,7 +46,6 @@ public class Spawner : MonoBehaviour
             }
             yield return null;
         }
-        running = false;
         yield return null;
     }
 }

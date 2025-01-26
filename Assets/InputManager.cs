@@ -10,7 +10,7 @@ public class InputManager : MonoBehaviour
     // Update is called once per frame
 
     void Awake(){
-        objects.Add(Object.FindObjectOfType<ObjectBubbleTaskable>());
+        objects.Add(Object.FindFirstObjectByType<ObjectBubbleTaskable>());
     }
     void LateUpdate()
     {

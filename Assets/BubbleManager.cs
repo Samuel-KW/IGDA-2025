@@ -27,19 +27,18 @@
             }
 
             if(audioManager == null){
-            // Place the prefab in a Resources folder (e.g., Assets/Resources/Prefabs/)
-            string prefabPath = "Prefabs/AudioManager";
-            GameObject loadedPrefab = Resources.Load<GameObject>(prefabPath);
-            
-            if(loadedPrefab != null){
-                audioManagerObject = GameObject.Instantiate(loadedPrefab, Vector3.zero, Quaternion.identity);
-                audioManager = audioManagerObject.GetComponent<AudioManager>();
-            } else {
-                Debug.LogError("AudioManager prefab not found in Resources folder");
+                // Place the prefab in a Resources folder (e.g., Assets/Resources/Prefabs/)
+                string prefabPath = "Prefabs/AudioManager";
+                GameObject loadedPrefab = Resources.Load<GameObject>(prefabPath);
+                
+                if(loadedPrefab != null){
+                    audioManagerObject = GameObject.Instantiate(loadedPrefab, Vector3.zero, Quaternion.identity);
+                    audioManager = audioManagerObject.GetComponent<AudioManager>();
+                } else {
+                    Debug.LogError("AudioManager prefab not found in Resources folder");
+                }
             }
-        }
         audioManager.SetMusicPowerNum(allBubbleList.Count);
-            //Debug.Log(playerBubbleList.Count);
         }
 
         public static void RecallAllBubbles(){
@@ -55,6 +54,7 @@
         }
 
         public static void RemoveBubble(GameObject bubbleRef){
+            Debug.Log("Removed Bubble");
             //Debug.Log(bubbleRef);
             int index = playerBubbleList.FindIndex(b => b == bubbleRef);
             //Debug.Log(index);
@@ -71,7 +71,10 @@
             if(bubbleTaskList == null){ 
                 bubbleTaskList = new ArrayList(); 
             }
-            RemoveBubble(bubbleRef); 
+            int index = playerBubbleList.FindIndex(b => b == bubbleRef);
+            //Debug.Log(index);
+            if(index != -1)
+            playerBubbleList.RemoveAt(index); 
             if(FindTaskIndex(bubbleTaskList, task) == -1){ 
                 bubbleTaskList.Add(task); 
             }

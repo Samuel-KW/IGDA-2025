@@ -11,7 +11,7 @@ public class Minion : MonoBehaviour
     // Update is called once per frame
     void Start(){
         BubbleManager.AddBubble(gameObject);
-        Debug.Log("Start Coroutine");
+        //Debug.Log("Start Coroutine");
         StartCoroutine(GetPlayer());
     }
 
@@ -60,6 +60,7 @@ public class Minion : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision){
         if(collision.collider.gameObject.layer == LayerMask.NameToLayer("Hazard")){
+            Debug.Log("Killed");
             BubbleManager.RemoveBubble(this.gameObject);
             Destroy(this.gameObject);
         }
@@ -67,23 +68,23 @@ public class Minion : MonoBehaviour
 
 
     IEnumerator GetPlayer() {
-        Debug.Log("CoRoutine Started");
+        //Debug.Log("CoRoutine Started");
         float timeWaited = 0f;
         while (timeWaited < 5f) {  // Try for 5 seconds max
-            Debug.Log("Executing");
+            //Debug.Log("Executing");
             
             player = GameObject.Find("Player")?.transform;
             if (player != null) {
 
-                Debug.Log(player);
+                //Debug.Log(player);
                 break;  // Exit if found
             }
             timeWaited += Time.deltaTime;
-            Debug.Log(timeWaited);
+            //Debug.Log(timeWaited);
             yield return null;  // Wait until next frame
         }
 
-        Debug.LogWarning("Player not found after waiting.");
+        //Debug.LogWarning("Player not found after waiting.");
 
         if (player == null) {
             Debug.LogWarning("Player not found after waiting.");
