@@ -569,6 +569,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpAmount: 10
   jumpDelay: 0.5
+  frameRate: 0
+  jumpSprite: {fileID: -1397456881, guid: fab84fe4fe81b5b45abb4609b6056532, type: 3}
+  sprites:
+  - {fileID: 1984857609, guid: 320f3b9a4c0b5204f99243e53f0b3439, type: 3}
+  - {fileID: -61406066, guid: d9199f51f53afe24c9a0f4a494788f6d, type: 3}
+  - {fileID: -955017833, guid: 9379333984df50f43a072d67af767370, type: 3}
+  - {fileID: -1882100112, guid: 3c3cb001933671f449dc665b639f8454, type: 3}
+  - {fileID: -1643738479, guid: 09dedeebab41fb24da7284ef5c332a82, type: 3}
+  - {fileID: -903860334, guid: 6a9cfe7b48365bc44a40463b1a30109c, type: 3}
+  - {fileID: 495129101, guid: 1ad0f10e3d6d6f648b4954e2a2d96935, type: 3}
+  - {fileID: 751886133, guid: 0eb74fb2f9c39c44f8dbdccd98bb3d85, type: 3}
+  spriteRenderer: {fileID: 568914727}
+  floatSprite: {fileID: 863952702, guid: ea54766a488de5c4dbff4efdc32f0ba3, type: 3}
 --- !u!61 &568914725
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -818,7 +831,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 1
+  orthographic: 0
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
