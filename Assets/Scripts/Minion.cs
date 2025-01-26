@@ -2,7 +2,7 @@ using Microsoft.CSharp;
 using UnityEngine;
 using System.Dynamic;
 using System.Collections;
-
+//
 public class Minion : MonoBehaviour
 {
     [SerializeField] Rigidbody2D rb;
