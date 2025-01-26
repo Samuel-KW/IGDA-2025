@@ -9,6 +9,7 @@ public class LungeEnemy : MonoBehaviour
     [SerializeField] private float lungedTime = 1f;  // Time spent in "lunged" state
     [SerializeField] Sprite[] sprites;
     [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] float rotOffset;
 
     private GameObject closestBubble = null;
     private Vector2 directionToBubble;
@@ -67,7 +68,7 @@ public class LungeEnemy : MonoBehaviour
                 targ.y = targ.y - objectPos.y;
 
                 float angle = Mathf.Atan2(targ.y, targ.x) * Mathf.Rad2Deg;
-                transform.rotation = Quaternion.Euler(new Vector3(0, 0, (angle-180)));
+                transform.rotation = Quaternion.Euler(new Vector3(0, 0, (angle-rotOffset)));
             }
         }
     }
