@@ -17,7 +17,7 @@ public class SoapBottle : ObjectBubbleTaskable
     void Update()
     {
         foreach(GameObject bubble in bubbles){
-            if(!(Vector3.Distance(bubble.transform.position, transform.position) < 3f)){
+            if(bubble != null && !(Vector3.Distance(bubble.transform.position, transform.position) < 3f)){
                 return;
             }
         }
