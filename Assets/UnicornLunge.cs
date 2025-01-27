@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class LungeEnemy : MonoBehaviour
+public class UnicornLunge : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private float distanceToAttack = 5f;
@@ -45,7 +45,7 @@ public class LungeEnemy : MonoBehaviour
             closestBubble = FindClosestBubble();
             if (closestBubble != null)
             {
-                spriteRenderer.sprite = sprites[0];
+                  spriteRenderer.sprite = sprites[0];
                 // Prepare to lunge towards the bubble
                 lungedTimer = lungedTime;
                 directionToBubble = closestBubble.transform.position - transform.position;
@@ -85,24 +85,33 @@ public class LungeEnemy : MonoBehaviour
 
         foreach (GameObject bubble in BubbleManager.allBubbleList)
         {
-            if(bubble != null){
-                float distance = Vector2.Distance(transform.position, bubble.transform.position);
-                if (distance < distanceToAttack && distance < minDistance)
-                {
-                    closest = bubble;
-                    minDistance = distance;
-                }
+            float distance = Vector2.Distance(transform.position, bubble.transform.position);
+            if (distance < distanceToAttack && distance < minDistance)
+            {
+                closest = bubble;
+                minDistance = distance;
             }
         }
 
         return closest;
     }
-
-    void OnCollisionEnter2D(Collision2D collision){
-        if(collision.collider.gameObject.layer == LayerMask.NameToLayer("Hazard")){
+    //if lunge or chase enemy script, then don't die, else we want to
+    //HingeJoint hinge = otherGameObject.GetComponent<HingeJoint>();
+    void OnCollisionEnter2D(Collision2D collision) {
+    // Check if object is on Hazard layer
+    if(collision.collider.gameObject.layer == LayerMask.NameToLayer("Hazard")) {
+        // Check if it's an enemy (has enemy components)
+        if(collision.gameObject.GetComponent<LungeEnemy>() != null || 
+           collision.gameObject.GetComponent<ChaserEnemy>() != null) {
             Debug.Log("Killed Enemy");
-            Destroy(this.gameObject);
+            Destroy(collision.gameObject);
+        }
+        // If it's a spike or other hazard (no enemy components)
+        else {
+            Debug.Log("Hit by Hazard");
+            Destroy(this.gameObject); // Destroy the unicorn
         }
     }
+}
     
 }

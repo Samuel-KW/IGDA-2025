@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Art/Misc.meta
 guid: f944a54f4dc2fb94aa6e6c2552877286
+========
+guid: 7db63cac82d0a39409cefadd81b117cf
+>>>>>>>> origin/cristian's-ACTUAL-branch:Assets/Art/art/background.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
