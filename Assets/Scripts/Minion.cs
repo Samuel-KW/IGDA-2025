@@ -61,10 +61,14 @@ public class Minion : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision){
         if(collision.collider.gameObject.layer == LayerMask.NameToLayer("Hazard")){
-            Debug.Log("Killed");
+            Debug.Log("Popped");
             GameObject dp = Instantiate(deathParticle, new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), Quaternion.identity);
             Destroy(dp, 5f);
             BubbleManager.RemoveBubble(this.gameObject);
+            if (BubbleManager.allBubbleList.Count <= 0)
+            {
+                BubbleManager.Lose();
+            }
             Destroy(this.gameObject);
         }
     }

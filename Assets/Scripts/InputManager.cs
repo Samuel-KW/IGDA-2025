@@ -14,9 +14,6 @@ public class InputManager : MonoBehaviour
     }
     void LateUpdate()
     {
-        if(BubbleManager.allBubbleList.Count <= 0){
-            BubbleManager.Lose();
-        }
         found = false;
         foreach (ObjectBubbleTaskable obj in objects){
             if (obj != null){

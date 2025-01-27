@@ -29,8 +29,8 @@ public class BubbleOctopusWin : ObjectBubbleTaskable
             else
             {
                 Debug.Log("Next level: " + nextLevel);
-                BubbleManager.RemoveAllBubbles();
                 SceneManager.LoadScene(nextLevel);
+                BubbleManager.RemoveAllBubbles();
             }
         } 
     }
