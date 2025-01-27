@@ -644,7 +644,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb7061391c4367d48b4318b7408167d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  neededBubbles: 1
+  neededBubbles: 2
   bubbles: []
   lastLevel: 0
   nextLevel: Scenes/level2
@@ -1672,8 +1672,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Certain items required a certain amount of bubbles to activate. \n\nOctavian
-    (the large octopus) will exchange bubble in return for progression. Send a bubble
-    to Octavian."
+    (the large octopus) will exchange bubble in return for progression. Send a couple
+    bubble to Octavian."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2930,7 +2930,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: While spiles won't kill you, they will pop your following bubbles. Lose
+  m_text: While spikes won't kill you, they will pop your following bubbles. Lose
     all your bubbles, lose the level.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
