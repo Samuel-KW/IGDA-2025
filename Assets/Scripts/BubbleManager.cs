@@ -52,7 +52,6 @@
             }
             GameObject winUI = ui.gameObject.transform.GetChild(0).gameObject;
             winUI.SetActive(true);
-            Debug.Log("Win!");
         }
 
         public static void Lose(){
@@ -61,7 +60,6 @@
             }
             GameObject loseUI = ui.gameObject.transform.GetChild(1).gameObject;
             loseUI.SetActive(true);
-            Debug.Log("Lost!");
         }
 
         public static void RecallAllBubbles(){

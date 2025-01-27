@@ -10,10 +10,7 @@ EditorBuildSettings:
     guid: 654344ccc79018f4bb393488f462dee8
   - enabled: 1
     path: Assets/Scenes/level1.unity
-    guid: e74614dd267b3634fabe04de7d205d43
-  - enabled: 1
-    path: Assets/Scenes/Testing Scenes/Alex's Scene.unity
-    guid: 62470fb972ecc8f408c13f034686635c
+    guid: e33e5c6b22ce73549a78bb93b0c4bb27
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

@@ -194,8 +194,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   neededBubbles: 5
   bubbles: []
-  lastLevel: 0
-  nextLevel: Scenes/level2
+  lastLevel: 1
+  nextLevel: 
 --- !u!212 &418134858
 SpriteRenderer:
   m_ObjectHideFlags: 0
